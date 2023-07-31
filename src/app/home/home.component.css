@@ -1,0 +1,54 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 30px;
+}
+
+input
+{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eee;
+    padding: 20px;
+    color: #333;
+
+}
+mat-expansion-panel-header
+{
+    background-color: #ffffff;
+    padding: 20px !important;
+    height: 80px;
+}
+
+.pImage
+{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+p
+{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+@media (max-width:700px) {
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin-top: 50px;
+    }
+    .product-wrapper
+    {
+        width: 100%;
+        justify-content:space-between;
+    }
+
+}

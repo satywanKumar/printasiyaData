@@ -1,0 +1,38 @@
+<div *ngIf="isLoading" style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <img class="loader" src="/assets/loader.gif" alt="">
+</div>
+
+<div *ngIf="!isLoading" class="wrapper">
+    <input name="searchItem" [(ngModel)]="searchItem" placeholder="search product" search/>
+    <br>
+    <br>
+    <div  *ngFor="let product of product | productFilter:searchItem; let i = index" style="margin-top: 10px;">
+        <mat-accordion >
+            <mat-expansion-panel >
+              <mat-expansion-panel-header>
+                <mat-panel-title style="display: flex; align-items: center;">
+                  <img class="pImage" [src]="product.pic"/>
+                  <span style="margin-left: 10px;">{{product.name}}</span>
+                </mat-panel-title>
+                <mat-panel-description style="display: flex; align-items: center;">
+                  <p style="background-color: royalblue; padding: 5px; color: white;border-radius: 2px;">{{product.quantity - product.sell}} / {{product.quantity}}</p>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          
+             <div style="width: 100%;">
+                <br>
+                <hr>
+                <br>
+                <P>Model :- {{product.model}}</P>
+                <p>Place: {{product.place}}</p>
+                <p>Date: {{product.date}}</p>
+                <p>Cost Price :- {{product.CP}}</p>
+                <p>Selling Price :- {{product.SP}}</p>
+                <br>
+                <button mat-raised-button style="background-color: royalblue; color: white;" (click)="sellProduct(product._id)">Sell This Product</button>
+                <button mat-raised-button style="background-color: red; color: white; margin-left: 10px;" (click)="delete(product._id)">Delete This Product</button>
+            </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+    </div>
+</div>

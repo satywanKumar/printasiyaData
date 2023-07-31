@@ -1,0 +1,61 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding:0px ;
+}
+.wrapper
+{
+    width: 100%;
+    padding: 15px;
+}
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.pImage
+{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+th,td
+{
+    text-align: left;
+    margin-left: 10%;
+    border: 1px solid rgb(113, 113, 113);
+    padding: 10px;
+}
+
+p
+{
+    font-size: 5vw;
+}
+
+input
+{
+    width: 100%;
+    outline: none;
+    border: 1px solid #eee;
+    padding: 20px;
+    color: #333;
+
+}
+
+@media (max-width:700px) {
+    .pImage
+    {
+        width: 40%;
+        height: 40%;
+    }
+    .wrapper
+    {
+        padding: 10px;
+    }
+
+}

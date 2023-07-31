@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar class="menu">Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</a>
+        <a mat-list-item routerLink="/dashboard/add-product"><mat-icon>add_circle</mat-icon>Add Product</a>
+        <a mat-list-item routerLink="/dashboard/product"><mat-icon>redeem</mat-icon>Product List</a>
+        <hr>
+        <a (click)="logout()" style="background-color: royalblue; color: white;" mat-list-item ><mat-icon>logout</mat-icon>Logout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar style="background-color:white; border-bottom: 1px solid rgb(218, 217, 217);">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <!-- <span>printasiya-admin</span> -->
+        <span>
+          <img class="logo" src="/assets/logo.png" alt="">
+        </span>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

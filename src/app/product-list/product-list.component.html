@@ -1,0 +1,29 @@
+<div *ngIf="isLoading" style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <img class="loader" src="/assets/loader.gif" alt="">
+</div>
+<div #printDivRef>
+   
+</div>
+<div class="wrapper">
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+        <h3 style="color: #333;">Product List</h3>
+        <!-- <button (click)="print()" mat-raised-button style="background-color: royalblue; color: white; margin-left: 10px;">print</button> -->
+    </div>
+    <input name="searchItem" [(ngModel)]="searchItem" placeholder="search product" search/>
+    <br>
+    <br>
+    <Table id="printDiv">
+        <tr>
+            <th>Name</th>
+            <th>Model</th>
+            <th>Image</th>
+            <th style="background-color: green; color: white; padding: 5px;">Price</th>
+        </tr>
+        <tr *ngFor="let product of product | productFilter:searchItem; let i = index">
+            <td>{{product.name}}</td>
+            <td>{{product.model}}</td>
+            <td><img class="pImage" [src]="product.pic"/></td>
+            <td style="color: red;">{{product.SP}}</td>
+        </tr>
+    </Table>
+</div>

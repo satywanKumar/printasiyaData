@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <div style="margin: auto;" *ngIf="isLoading">
+        <img class="loader" src="../../assets/loader.gif"/>
+    </div>
+   <div *ngIf="!isLoading" class="box">
+    <h3>Login</h3>
+    <form>
+        <mat-form-field>
+            <mat-label>Enter your userName</mat-label>
+            <input matInput value="username : printasiya" name="userName" [(ngModel)] = "data.userName"  required>
+            <mat-error >this field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input type="password" matInput name = "password" [(ngModel)] = "data.password"   required>
+            <mat-error >this field is required</mat-error>
+        </mat-form-field>
+        <button [disabled]="data.password.length == 0" type="submit" (click)="login()">Submit</button>
+    </form>
+   </div>
+</div>
